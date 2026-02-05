@@ -41,3 +41,18 @@ header {
     text-align: center;
     padding: 50px 0;
 }
+
+.download-btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.download-btn:hover {
+    background-color: #2980b9;
+}
