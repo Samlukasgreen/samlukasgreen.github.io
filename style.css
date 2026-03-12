@@ -78,6 +78,11 @@ header {
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: flex;         
+    justify-content: center; 
+    flex-wrap: wrap;      
+    gap: 10px;             
+    margin-bottom: 30px;
 }
 
 /* The style applied when a button is clicked */
