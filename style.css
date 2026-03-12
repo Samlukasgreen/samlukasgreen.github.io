@@ -70,7 +70,7 @@ header {
 }
 
 .filter-btn {
-    background-color: #f1f1f1;
+    background-color: #40E0D0;
     color: #333;
     border: 1px solid #ccc;
     padding: 10px 20px;
@@ -80,7 +80,7 @@ header {
 
 /* The style applied when a button is clicked */
 .filter-btn.active {
-    background-color: #007bff; /* A nice blue highlight */
+    background-color: #008080; /* A nice blue highlight */
     color: white;
-    border-color: #007bff;
+    border-color: #008080;
 }
