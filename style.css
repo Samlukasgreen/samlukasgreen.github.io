@@ -138,26 +138,51 @@ header {
     animation: spin 15s infinite linear;
 }
 
-/* Layer 1: The back wave (Light Teal) */
+/* Layer 1: The back wave (Light Teal / Green) */
 .top-wave.wave-bg {
     background-color: rgba(64, 224, 208, 0.4); 
-    top: -3700px;          /* Was -3850px. Now hangs down much further! */
-    animation-duration: 20s;
+    /* Notice we removed 'top' and added a second animation 'lap-green' */
+    animation: spin 20s infinite linear, lap-green 12s infinite ease-in-out;
 }
 
-/* Layer 2: The middle wave (White, to create depth and mixing) */
+/* Layer 2: The middle wave (White / Froth) */
 .top-wave.wave-mid {
     background-color: rgba(255, 255, 255, 0.5); 
-    top: -3720px;          /* Was -3870px */
-    animation-duration: 15s;
-    animation-direction: reverse; 
+    animation: spin 15s infinite linear reverse, lap-white 12s infinite ease-in-out;
 }
 
-/* Layer 3: The front wave (Dark Teal) */
+/* Layer 3: The front wave (Dark Teal / Blue) */
 .top-wave.wave-front {
     background-color: rgba(0, 128, 128, 0.4); 
-    top: -3740px;          /* Was -3880px */
-    animation-duration: 25s;
+    animation: spin 25s infinite linear, lap-blue 12s infinite ease-in-out;
+}
+
+/* =========================================
+   THE LAPPING CHOREOGRAPHY (12 Second Loop)
+   ========================================= */
+
+/* Blue: Waits, surges forward, retracts the fastest */
+@keyframes lap-blue {
+    0%, 10% { top: calc(20vh - 4000px); } /* Waits at the top */
+    20% { top: calc(25vh - 4000px); }     /* Catches the white froth here */
+    50% { top: calc(70vh - 4000px); }     /* The peak of the crash (70% down screen) */
+    70%, 100% { top: calc(20vh - 4000px); } /* Retracts super fast and waits */
+}
+
+/* Green: Gets pushed by blue, projects out slightly, retracts medium speed */
+@keyframes lap-green {
+    0%, 15% { top: calc(20vh - 4000px); }
+    20% { top: calc(25vh - 4000px); }
+    50% { top: calc(73vh - 4000px); }     /* Projects 3vh out past blue at the peak */
+    85%, 100% { top: calc(20vh - 4000px); } /* Retracts slower than blue */
+}
+
+/* White (Froth): Slowly dragging back, gets caught, projects furthest out */
+@keyframes lap-white {
+    0% { top: calc(35vh - 4000px); }      /* Still sliding backwards from last wave! */
+    20% { top: calc(25vh - 4000px); }     /* Blue catches it just as it reaches 25vh */
+    50% { top: calc(76vh - 4000px); }     /* Projects 6vh out past blue at the peak */
+    100% { top: calc(35vh - 4000px); }    /* Starts the long, slow drag back up */
 }
 
 /* The spinning engine */
