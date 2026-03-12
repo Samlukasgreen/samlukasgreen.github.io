@@ -15,20 +15,31 @@ body {
 nav {
     background: #2c3e50;
     padding: 1rem;
-    border-radius: 25%;
+    border-radius: 25px;     /* Changed from % to px for a cleaner pill shape */
     text-align: center;
+    position: relative;      /* Tells the browser this item can be moved forward/backward */
+    z-index: 10;             /* Pulls it to the very front layer */
 }
-
 nav a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
 }
-
+/* Main Content Box */
+section {
+    background-color: rgba(40, 40, 40, 0.75); /* Semi-transparent dark grey */
+    padding: 40px;
+    border-radius: 20px;     /* Rounds the corners of the big box */
+    margin-top: 30px;        /* Adds breathing room between the nav and the box */
+    position: relative;      /* Keeps it safely above the waves */
+    z-index: 10;             /* Pulls it to the front */
+    color: white;            /* Makes your text readable against the dark background! */
+}
 /* Project Cards */
 .project-card {
-    border: 1px solid #ddd;
+    background-color: rgba(255, 255, 255, 0.05); /* Gives cards a very subtle highlight */
+    border: 1px solid rgba(255, 255, 255, 0.2);  /* Softens the border line */
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 8px;
