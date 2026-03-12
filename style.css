@@ -98,3 +98,68 @@ header {
 }
     border-color: #008080;
 }
+
+
+/* =========================================
+   WAVE ANIMATION BACKGROUND
+   ========================================= */
+
+/* The invisible boundaries on the left and right of your screen */
+.sea-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 15vw;       /* Takes up 15% of the screen width */
+    max-width: 150px;  /* But never gets bigger than 150px */
+    overflow: hidden;
+    z-index: -1;       /* Crucial: Keeps the waves BEHIND your projects */
+}
+
+.sea-container.left { left: 0; }
+.sea-container.right { right: 0; }
+
+/* The actual wave shape (a giant imperfect circle) */
+.wave {
+    position: absolute;
+    top: 50%;
+    width: 200vh;      /* Massive height and width to make the curve gentle */
+    height: 200vh;
+    border-radius: 43%; /* This makes it squished instead of perfectly round */
+    animation: drift 10s infinite linear; /* Rotates constantly */
+}
+
+/* --- Left Shore Waves --- */
+.left .wave {
+    left: -190vh; /* Pushes the giant circle almost entirely off the screen */
+}
+.left .wave.wave1 {
+    background-color: rgba(64, 224, 208, 0.3); /* Your light teal, made 30% transparent */
+    animation-duration: 12s;
+}
+.left .wave.wave2 {
+    background-color: rgba(0, 128, 128, 0.3); /* Your dark teal, made 30% transparent */
+    left: -192vh; /* Offset slightly to create 3D depth */
+    animation-duration: 16s;
+    animation-direction: reverse; /* Spins backward for a chaotic water effect */
+}
+
+/* --- Right Shore Waves --- */
+.right .wave {
+    right: -190vh; /* Pushes the giant circle almost entirely off the screen */
+}
+.right .wave.wave1 {
+    background-color: rgba(64, 224, 208, 0.3);
+    animation-duration: 13s;
+}
+.right .wave.wave2 {
+    background-color: rgba(0, 128, 128, 0.3);
+    right: -192vh;
+    animation-duration: 17s;
+    animation-direction: reverse;
+}
+
+/* The spinning animation that causes the edges to undulate like waves */
+@keyframes drift {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
