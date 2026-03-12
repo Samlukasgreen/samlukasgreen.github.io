@@ -56,3 +56,34 @@ header {
 .download-btn:hover {
     background-color: #2980b9;
 }
+.filterDiv {
+  display: none; /* Hidden by default */
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+}
+
+/* The "show" class is added by JavaScript */
+.show {
+  display: block;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
