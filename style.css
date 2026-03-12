@@ -156,34 +156,26 @@ header {
     background-color: rgba(0, 128, 128, 0.4); 
     animation: spin 25s infinite linear, lap-blue 12s infinite ease-in-out;
 }
-
 /* =========================================
-   THE LAPPING CHOREOGRAPHY (Constant Motion)
+   THE LAPPING CHOREOGRAPHY (Continuous Smooth Motion)
    ========================================= */
 
-/* Blue: Immediately starts moving forward, retracts fast, tiny fraction of a second to gather */
+/* Blue: Travels the furthest distance, so it moves the fastest! */
 @keyframes lap-blue {
-    0%   { top: calc(20vh - 4000px); } /* Immediately starts the next wave */
-    15%  { top: calc(25vh - 4000px); } /* Catches the white froth */
-    50%  { top: calc(70vh - 4000px); } /* The peak of the crash (70% down screen) */
-    85%  { top: calc(20vh - 4000px); } /* Fast retraction back to the top */
-    100% { top: calc(20vh - 4000px); } /* A very brief, natural pause before crashing again */
+    0%, 100% { top: calc(15vh - 4000px); } /* Retracts the highest up the shore */
+    50%      { top: calc(70vh - 4000px); } /* Crashes deep */
 }
 
-/* Green: Gets pushed by blue, projects out slightly, retracts slower than blue */
+/* Green: Travels a medium distance */
 @keyframes lap-green {
-    0%   { top: calc(20vh - 4000px); }
-    15%  { top: calc(25vh - 4000px); }
-    50%  { top: calc(73vh - 4000px); } /* Projects 3vh out past blue at the peak */
-    100% { top: calc(20vh - 4000px); } /* Takes the entire rest of the loop to retract */
+    0%, 100% { top: calc(25vh - 4000px); }
+    50%      { top: calc(73vh - 4000px); } /* Projects slightly past blue */
 }
 
-/* White (Froth): Slowly dragging back, gets caught, projects furthest out */
+/* White (Froth): Travels the shortest distance, so it moves the slowest */
 @keyframes lap-white {
-    0%   { top: calc(35vh - 4000px); } /* Still sliding backwards from last wave! */
-    15%  { top: calc(25vh - 4000px); } /* Blue catches it exactly as it gets here */
-    50%  { top: calc(76vh - 4000px); } /* Projects 6vh out past blue at the peak */
-    100% { top: calc(35vh - 4000px); } /* Extremely slow drag back up the shore */
+    0%, 100% { top: calc(40vh - 4000px); } /* Barely retracts, drags behind */
+    50%      { top: calc(76vh - 4000px); } /* Projects the furthest at the crash */
 }
 /* The spinning engine */
 @keyframes spin {
