@@ -9,6 +9,7 @@ body {
     margin: auto;
     padding: 20px;
     background-color: #FFFCDF;
+    overflow-x: hidden; /* <--- ADD THIS LINE to stop left/right screen stretching! */
 }
 
 /* Navigation Bar */
@@ -119,11 +120,11 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: -1;          /* Keeps it strictly behind your text/buttons */
-    pointer-events: none; /* Prevents the invisible wave box from blocking your clicks */
+    width: 100%;          /* Changed from 100vw to fix horizontal expanding */
+    height: 100%;         /* Changed from 100vh for stability */
+    overflow: hidden;     /* This is what chops off the giant circles */
+    z-index: -1;          
+    pointer-events: none; 
 }
 
 /* The giant shapes that create the lapping effect */
@@ -140,22 +141,22 @@ header {
 /* Layer 1: The back wave (Light Teal) */
 .top-wave.wave-bg {
     background-color: rgba(64, 224, 208, 0.4); 
-    top: -3850px;          /* Hangs down 150px from the top */
+    top: -3700px;          /* Was -3850px. Now hangs down much further! */
     animation-duration: 20s;
 }
 
 /* Layer 2: The middle wave (White, to create depth and mixing) */
 .top-wave.wave-mid {
     background-color: rgba(255, 255, 255, 0.5); 
-    top: -3870px;          /* Hangs down 130px */
+    top: -3720px;          /* Was -3870px */
     animation-duration: 15s;
-    animation-direction: reverse; /* Spins the opposite way for a chaotic liquid look */
+    animation-direction: reverse; 
 }
 
 /* Layer 3: The front wave (Dark Teal) */
 .top-wave.wave-front {
     background-color: rgba(0, 128, 128, 0.4); 
-    top: -3880px;          /* Hangs down 120px */
+    top: -3740px;          /* Was -3880px */
     animation-duration: 25s;
 }
 
