@@ -69,23 +69,20 @@ header {
   display: block;
 }
 
-.btn {
-  border: none;
-  outline: none;
-  padding: 10px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-  border-radius: 5px;
-  margin: 5px;
+.filter-btn {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #ddd;
-}
-
-.btn.active {
-  background-color: #666;
-  color: white;
+/* The style applied when a button is clicked */
+.filter-btn.active {
+    background-color: #007bff; /* A nice blue highlight */
+    color: white;
+    border-color: #007bff;
 }
 
 /* Ensure the filtering works with your existing card styling */
