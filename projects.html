@@ -17,14 +17,14 @@
         <h1>My Work</h1>
 
         <div id="filter-buttons">
-            <button class="btn active" onclick="filterSelection('all')">Show All</button>
-            <button class="btn" onclick="filterSelection('mech')">Mechanical</button>
-            <button class="btn" onclick="filterSelection('bio')">Biomedical</button>
-            <button class="btn" onclick="filterSelection('elec')">Electrical</button>
-            <button class="btn" onclick="filterSelection('cs')">Computer Science</button>
-            <button class="btn" onclick="filterSelection('ai')">AI Engineering</button>
+            <button class="filter-btn active" data-filter="all">Show All</button>
+            <button class="filter-btn" data-filter="mech">Mechanical</button>
+            <button class="filter-btn" data-filter="bio">Biomedical</button>
+            <button class="filter-btn" data-filter="elec">Electrical</button>
+            <button class="filter-btn" data-filter="cs">Computer Science</button>
+            <button class="filter-btn" data-filter="ai">AI Engineering</button>
         </div>
-
+        
         <div class="container">
             <div class="filterDiv ai cs project-card">
                 <h3>Anomaly Detection for wind and solar plants</h3>
