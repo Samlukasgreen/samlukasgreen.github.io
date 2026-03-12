@@ -87,3 +87,16 @@ header {
   background-color: #666;
   color: white;
 }
+
+/* Ensure the filtering works with your existing card styling */
+.filterDiv {
+  display: none; /* Hide projects by default */
+}
+
+.show {
+  display: block; /* The JS adds this class to make them visible */
+}
+
+#filter-buttons {
+    margin-bottom: 30px;
+}
