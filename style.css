@@ -73,6 +73,7 @@ header {
     background-color: #40E0D0;
     color: #333;
     border: 1px solid #ccc;
+    border-radius: 25%;
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
