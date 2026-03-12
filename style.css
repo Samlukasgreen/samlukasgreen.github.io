@@ -158,33 +158,33 @@ header {
 }
 
 /* =========================================
-   THE LAPPING CHOREOGRAPHY (12 Second Loop)
+   THE LAPPING CHOREOGRAPHY (Constant Motion)
    ========================================= */
 
-/* Blue: Waits, surges forward, retracts the fastest */
+/* Blue: Immediately starts moving forward, retracts fast, tiny fraction of a second to gather */
 @keyframes lap-blue {
-    0%, 10% { top: calc(20vh - 4000px); } /* Waits at the top */
-    20% { top: calc(25vh - 4000px); }     /* Catches the white froth here */
-    50% { top: calc(70vh - 4000px); }     /* The peak of the crash (70% down screen) */
-    70%, 100% { top: calc(20vh - 4000px); } /* Retracts super fast and waits */
+    0%   { top: calc(20vh - 4000px); } /* Immediately starts the next wave */
+    15%  { top: calc(25vh - 4000px); } /* Catches the white froth */
+    50%  { top: calc(70vh - 4000px); } /* The peak of the crash (70% down screen) */
+    85%  { top: calc(20vh - 4000px); } /* Fast retraction back to the top */
+    100% { top: calc(20vh - 4000px); } /* A very brief, natural pause before crashing again */
 }
 
-/* Green: Gets pushed by blue, projects out slightly, retracts medium speed */
+/* Green: Gets pushed by blue, projects out slightly, retracts slower than blue */
 @keyframes lap-green {
-    0%, 15% { top: calc(20vh - 4000px); }
-    20% { top: calc(25vh - 4000px); }
-    50% { top: calc(73vh - 4000px); }     /* Projects 3vh out past blue at the peak */
-    85%, 100% { top: calc(20vh - 4000px); } /* Retracts slower than blue */
+    0%   { top: calc(20vh - 4000px); }
+    15%  { top: calc(25vh - 4000px); }
+    50%  { top: calc(73vh - 4000px); } /* Projects 3vh out past blue at the peak */
+    100% { top: calc(20vh - 4000px); } /* Takes the entire rest of the loop to retract */
 }
 
 /* White (Froth): Slowly dragging back, gets caught, projects furthest out */
 @keyframes lap-white {
-    0% { top: calc(35vh - 4000px); }      /* Still sliding backwards from last wave! */
-    20% { top: calc(25vh - 4000px); }     /* Blue catches it just as it reaches 25vh */
-    50% { top: calc(76vh - 4000px); }     /* Projects 6vh out past blue at the peak */
-    100% { top: calc(35vh - 4000px); }    /* Starts the long, slow drag back up */
+    0%   { top: calc(35vh - 4000px); } /* Still sliding backwards from last wave! */
+    15%  { top: calc(25vh - 4000px); } /* Blue catches it exactly as it gets here */
+    50%  { top: calc(76vh - 4000px); } /* Projects 6vh out past blue at the peak */
+    100% { top: calc(35vh - 4000px); } /* Extremely slow drag back up the shore */
 }
-
 /* The spinning engine */
 @keyframes spin {
     100% { transform: rotate(360deg); }
