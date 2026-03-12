@@ -15,19 +15,34 @@
 
     <section>
         <h1>My Work</h1>
-        <div class="project-card">
-            <h3>Anomaly Detection for wind and solar plants </h3>
-            <p>Description of project.</p>
+
+        <div id="filter-buttons">
+            <button class="btn active" onclick="filterSelection('all')">Show All</button>
+            <button class="btn" onclick="filterSelection('mech')">Mechanical</button>
+            <button class="btn" onclick="filterSelection('bio')">Biomedical</button>
+            <button class="btn" onclick="filterSelection('elec')">Electrical</button>
+            <button class="btn" onclick="filterSelection('cs')">Computer Science</button>
+            <button class="btn" onclick="filterSelection('ai')">AI Engineering</button>
         </div>
 
-        <div class="project-card">
-            <h3>Carbon fibre gravity racer</h3>
-            <p>Description of project.</p>
-        </div>
-        <div class="project-card">
-            <h3>Project Title 3</h3>
-            <p>Description of project.</p>
+        <div class="container">
+            <div class="filterDiv ai cs project-card">
+                <h3>Anomaly Detection for wind and solar plants</h3>
+                <p>Description of project.</p>
+            </div>
+
+            <div class="filterDiv mech project-card">
+                <h3>Carbon fibre gravity racer</h3>
+                <p>Description of project.</p>
+            </div>
+
+            <div class="filterDiv mech elec project-card">
+                <h3>Project Title 3</h3>
+                <p>Description of project.</p>
+            </div>
         </div>
     </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
