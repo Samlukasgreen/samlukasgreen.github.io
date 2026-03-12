@@ -8,6 +8,7 @@ body {
     max-width: 800px;
     margin: auto;
     padding: 20px;
+    background-color: #FFFCDF;
 }
 
 /* Navigation Bar */
@@ -101,65 +102,55 @@ header {
 
 
 /* =========================================
-   WAVE ANIMATION BACKGROUND
+   TOP-DOWN WAVE ANIMATION
    ========================================= */
 
-/* The invisible boundaries on the left and right of your screen */
-.sea-container {
+/* The invisible container locking the waves to the top of the screen */
+.wave-container-top {
     position: fixed;
     top: 0;
-    bottom: 0;
-    width: 15vw;       /* Takes up 15% of the screen width */
-    max-width: 150px;  /* But never gets bigger than 150px */
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
-    z-index: -1;       /* Crucial: Keeps the waves BEHIND your projects */
+    z-index: -1;          /* Keeps it strictly behind your text/buttons */
+    pointer-events: none; /* Prevents the invisible wave box from blocking your clicks */
 }
 
-.sea-container.left { left: 0; }
-.sea-container.right { right: 0; }
-
-/* The actual wave shape (a giant imperfect circle) */
-.wave {
+/* The giant shapes that create the lapping effect */
+.top-wave {
     position: absolute;
-    top: 50%;
-    width: 200vh;      /* Massive height and width to make the curve gentle */
-    height: 200vh;
-    border-radius: 43%; /* This makes it squished instead of perfectly round */
-    animation: drift 10s infinite linear; /* Rotates constantly */
+    left: 50%;
+    margin-left: -2000px;  /* Centers a massive 4000px circle */
+    width: 4000px;
+    height: 4000px;
+    border-radius: 43%;    /* The "squish" that makes it look like a liquid wave */
+    animation: spin 15s infinite linear;
 }
 
-/* --- Left Shore Waves --- */
-.left .wave {
-    left: -190vh; /* Pushes the giant circle almost entirely off the screen */
-}
-.left .wave.wave1 {
-    background-color: rgba(64, 224, 208, 0.3); /* Your light teal, made 30% transparent */
-    animation-duration: 12s;
-}
-.left .wave.wave2 {
-    background-color: rgba(0, 128, 128, 0.3); /* Your dark teal, made 30% transparent */
-    left: -192vh; /* Offset slightly to create 3D depth */
-    animation-duration: 16s;
-    animation-direction: reverse; /* Spins backward for a chaotic water effect */
+/* Layer 1: The back wave (Light Teal) */
+.top-wave.wave-bg {
+    background-color: rgba(64, 224, 208, 0.4); 
+    top: -3850px;          /* Hangs down 150px from the top */
+    animation-duration: 20s;
 }
 
-/* --- Right Shore Waves --- */
-.right .wave {
-    right: -190vh; /* Pushes the giant circle almost entirely off the screen */
-}
-.right .wave.wave1 {
-    background-color: rgba(64, 224, 208, 0.3);
-    animation-duration: 13s;
-}
-.right .wave.wave2 {
-    background-color: rgba(0, 128, 128, 0.3);
-    right: -192vh;
-    animation-duration: 17s;
-    animation-direction: reverse;
+/* Layer 2: The middle wave (White, to create depth and mixing) */
+.top-wave.wave-mid {
+    background-color: rgba(255, 255, 255, 0.5); 
+    top: -3870px;          /* Hangs down 130px */
+    animation-duration: 15s;
+    animation-direction: reverse; /* Spins the opposite way for a chaotic liquid look */
 }
 
-/* The spinning animation that causes the edges to undulate like waves */
-@keyframes drift {
-    0% { transform: translateY(-50%) rotate(0deg); }
-    100% { transform: translateY(-50%) rotate(360deg); }
+/* Layer 3: The front wave (Dark Teal) */
+.top-wave.wave-front {
+    background-color: rgba(0, 128, 128, 0.4); 
+    top: -3880px;          /* Hangs down 120px */
+    animation-duration: 25s;
+}
+
+/* The spinning engine */
+@keyframes spin {
+    100% { transform: rotate(360deg); }
 }
