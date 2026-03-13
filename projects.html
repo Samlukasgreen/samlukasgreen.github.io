@@ -24,30 +24,38 @@
     <section>
         <div id="filter-buttons">
             <button class="filter-btn active" data-filter="all">Show All</button>
-            <button class="filter-btn" data-filter="mech">Mechanical</button>
-            <button class="filter-btn" data-filter="bio">Biomedical</button>
-            <button class="filter-btn" data-filter="elec">Electrical</button>
+            <button class="filter-btn" data-filter="work">Work Experience</button>
+            <button class="filter-btn" data-filter="mech">Mechanical Engineering</button>
+            <button class="filter-btn" data-filter="bio">Biomedical Engineering</button>
+            <button class="filter-btn" data-filter="elec">Electrical Engineering</button>
             <button class="filter-btn" data-filter="cs">Computer Science</button>
             <button class="filter-btn" data-filter="ai">AI Engineering</button>
         </div>
         
         <div class="container">
-            <div class="filterDiv ai cs project-card">
+            <div class="filterDiv mech work cs project-card">
                 <h3>Renewable Performance Intern, Exus Renewables | Pittsburgh, PA | June 2025 - July 2025</h3>
                 <p>Programmed a tool to detect anomalies in wind and solar sites, utilizing Python and Pandas to pull, process and send data to an SQL server. 
                     Used Ignition to automate it so it runs daily and provides a list of problematic metrics to site managers.
                     Estimated by head of operations to save Exus 6.8 million dollars annually.
                 </p>
             </div>
-
+            <div class="filterDiv mech work cs project-card">
+                <h3>Renewable Performance Intern, Exus Renewables | Pittsburgh, PA| June 2024 - July 2024</h3>
+                <p> Developed documentation and a working API for a new SCADA system for wind and solar plants.
+                    Programmed three separate programs in Python with Pandas to pull down data and present it to site managers in PowerBI.   
+                    Utilized these to pinpoint any plants or devices performing poorly and identify potential causes and solutions.
+                </p>
+            </div>
             <div class="filterDiv mech project-card">
                 <h3>Carbon fibre gravity racer</h3>
                 <p>Description of project.</p>
             </div>
 
-            <div class="filterDiv mech elec project-card">
-                <h3>Project Title 3</h3>
-                <p>Description of project.</p>
+            <div class="filterDiv bio mech elec project-card">
+                <h3>Smart Aid Smart Crash Cart | September 2024 - May 2025 </h3>
+                <p>Designed and constructed a smart crash cart utilizing an arduino connected to a series of pressure plates, a touch screen tablet
+                and lights to light up the required medication anc tools to aid doctors in cardiac events and aid inventory tracking. </p>
             </div>
         </div>
     </section>
