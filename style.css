@@ -183,40 +183,85 @@ header {
 }
 
 /* =========================================
-   SEA ITEMS (Starfish and Driftwood)
+   SEA ITEMS (Custom Shapes & Drift)
    ========================================= */
 
 .sea-item {
     position: fixed;
-    font-size: 2.5rem;   /* Makes the emojis nice and big */
-    z-index: 0;          /* Sits ON TOP of the waves (-1) but BEHIND your dark grey content box (10) */
-    pointer-events: none; /* Prevents them from blocking clicks */
+    z-index: 0;          /* Sits behind your content but in front of waves */
+    pointer-events: none;
 }
 
+/* --- THE STARFISH SHAPE --- */
 .starfish {
-    right: 8vw; /* Sits in the right margin */
-    /* 24s loop means it alternates every other 12s wave */
+    right: 8vw; 
+    width: 40px;
+    height: 40px;
+    background-color: #E07A5F; /* A nice, natural coral/orange */
+    /* This carves the square into a 5-pointed star! */
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     animation: move-starfish 24s ease-in-out infinite; 
 }
 
+/* --- THE DRIFTWOOD SHAPE --- */
 .driftwood {
-    left: 8vw; /* Sits in the left margin */
+    left: 8vw;
+    width: 8px;
+    height: 35px;
+    background-color: #8B5A2B; /* A rich wood brown */
+    border-radius: 4px;
     animation: move-driftwood 24s ease-in-out infinite;
 }
 
-/* Starfish: Gets carried IN on Wave 1, sits still for Wave 2 */
-@keyframes move-starfish {
-    0%   { top: -10vh; transform: rotate(0deg); }    /* Swept out to sea (hidden above screen) */
-    25%  { top: 68vh; transform: rotate(180deg); }   /* Wave 1 drops it on the shore */
-    75%  { top: 68vh; transform: rotate(180deg); }   /* Sits completely still while Wave 2 happens */
-    100% { top: -10vh; transform: rotate(360deg); }  /* Swept back out to sea by Wave 2 */
+/* The two little prongs attached to the top of the driftwood */
+.driftwood::before,
+.driftwood::after {
+    content: '';
+    position: absolute;
+    background-color: #8B5A2B;
+    border-radius: 4px;
 }
 
-/* Driftwood: Sits still for Wave 1, gets carried IN on Wave 2 */
+.driftwood::before {
+    width: 6px;
+    height: 20px;
+    top: -12px;
+    left: -5px;
+    transform: rotate(-35deg); /* Leans left */
+}
+
+.driftwood::after {
+    width: 6px;
+    height: 16px;
+    top: -8px;
+    right: -5px;
+    transform: rotate(40deg);  /* Leans right */
+}
+
+/* =========================================
+   SEA ITEM CHOREOGRAPHY (24 Second Loops)
+   ========================================= */
+
+/* Starfish: Carried IN on Wave 1, sits still for Wave 2 */
+@keyframes move-starfish {
+    0%   { top: -10vh; transform: rotate(0deg); }   
+    25%  { top: 68vh; transform: rotate(180deg); }  /* Drops on shore */
+    75%  { top: 68vh; transform: rotate(180deg); }  /* Sits completely still */
+    100% { top: -10vh; transform: rotate(360deg); } /* Swept back out to sea */
+}
+
+/* Driftwood: Drifts down the shore while deposited, carried IN on Wave 2 */
 @keyframes move-driftwood {
-    0%   { top: 68vh; transform: rotate(0deg); }     /* Starts already deposited on the shore */
-    25%  { top: 68vh; transform: rotate(0deg); }     /* Sits still while Wave 1 crashes */
-    50%  { top: -10vh; transform: rotate(180deg); }  /* Swept out to sea by Wave 1 retracting */
-    75%  { top: 68vh; transform: rotate(360deg); }   /* Wave 2 drops it back on the shore */
-    100% { top: 68vh; transform: rotate(360deg); }   /* Sits still */
+    /* (0% to 25%) Middle of sitting on the shore: slowly drifting and rolling down the beach */
+    0%   { top: 68vh; transform: translate(5vw, 2vh) rotate(30deg); }     
+    25%  { top: 68vh; transform: translate(10vw, 4vh) rotate(45deg); }    
+    
+    /* (25% to 50%) Swept aggressively out to sea */
+    50%  { top: -10vh; transform: translate(0vw, 0vh) rotate(180deg); }  
+
+    /* (50% to 75%) Dropped back onto the shore by the next wave */
+    75%  { top: 68vh; transform: translate(0vw, 0vh) rotate(345deg); }   
+    
+    /* (75% to 100%) Start of sitting on the shore: matches the 0% angle (390 - 360 = 30) to loop seamlessly! */
+    100% { top: 68vh; transform: translate(5vw, 2vh) rotate(390deg); }   
 }
