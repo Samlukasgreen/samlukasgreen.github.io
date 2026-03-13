@@ -181,3 +181,42 @@ header {
 @keyframes spin {
     100% { transform: rotate(360deg); }
 }
+
+/* =========================================
+   SEA ITEMS (Starfish and Driftwood)
+   ========================================= */
+
+.sea-item {
+    position: fixed;
+    font-size: 2.5rem;   /* Makes the emojis nice and big */
+    z-index: 0;          /* Sits ON TOP of the waves (-1) but BEHIND your dark grey content box (10) */
+    pointer-events: none; /* Prevents them from blocking clicks */
+}
+
+.starfish {
+    right: 8vw; /* Sits in the right margin */
+    /* 24s loop means it alternates every other 12s wave */
+    animation: move-starfish 24s ease-in-out infinite; 
+}
+
+.driftwood {
+    left: 8vw; /* Sits in the left margin */
+    animation: move-driftwood 24s ease-in-out infinite;
+}
+
+/* Starfish: Gets carried IN on Wave 1, sits still for Wave 2 */
+@keyframes move-starfish {
+    0%   { top: -10vh; transform: rotate(0deg); }    /* Swept out to sea (hidden above screen) */
+    25%  { top: 68vh; transform: rotate(180deg); }   /* Wave 1 drops it on the shore */
+    75%  { top: 68vh; transform: rotate(180deg); }   /* Sits completely still while Wave 2 happens */
+    100% { top: -10vh; transform: rotate(360deg); }  /* Swept back out to sea by Wave 2 */
+}
+
+/* Driftwood: Sits still for Wave 1, gets carried IN on Wave 2 */
+@keyframes move-driftwood {
+    0%   { top: 68vh; transform: rotate(0deg); }     /* Starts already deposited on the shore */
+    25%  { top: 68vh; transform: rotate(0deg); }     /* Sits still while Wave 1 crashes */
+    50%  { top: -10vh; transform: rotate(180deg); }  /* Swept out to sea by Wave 1 retracting */
+    75%  { top: 68vh; transform: rotate(360deg); }   /* Wave 2 drops it back on the shore */
+    100% { top: 68vh; transform: rotate(360deg); }   /* Sits still */
+}
