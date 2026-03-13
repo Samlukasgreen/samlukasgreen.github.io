@@ -188,27 +188,26 @@ header {
 
 .sea-item {
     position: fixed;
-    z-index: 0;          /* Sits behind your content but in front of waves */
+    z-index: 20;          /* Changed from 0 to 20! This pulls them to the very front */
     pointer-events: none;
 }
 
 /* --- THE STARFISH SHAPE --- */
 .starfish {
-    right: 8vw; 
+    right: 2vw;           /* Pushed safely out into the right margin */
     width: 40px;
     height: 40px;
-    background-color: #E07A5F; /* A nice, natural coral/orange */
-    /* This carves the square into a 5-pointed star! */
+    background-color: #E07A5F; 
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     animation: move-starfish 24s ease-in-out infinite; 
 }
 
 /* --- THE DRIFTWOOD SHAPE --- */
 .driftwood {
-    left: 8vw;
+    left: 2vw;            /* Pushed safely out into the left margin */
     width: 8px;
     height: 35px;
-    background-color: #8B5A2B; /* A rich wood brown */
+    background-color: #8B5A2B; 
     border-radius: 4px;
     animation: move-driftwood 24s ease-in-out infinite;
 }
