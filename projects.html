@@ -60,7 +60,6 @@
 
             <div class="filterDiv ai cs project-card">
                 <h3>NSL-KDD Cyber Attack Prediction | August 2025 - November 2025</h3>
-                <p>Created a pipeline to clean, scale and encode the NSL-KDD data for use in a PyTorch neural network to identify cyber attacks. Trained a neural network using PyTorch and Spark to predict the presence and type of attack, achieving an 89% accuracy on testing data.</p>
             </div>
 
             <div class="filterDiv ai cs bio project-card">
@@ -105,6 +104,39 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script>
+        // This function handles the filtering
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none"; // Hide everything first
+                if (x[i].className.indexOf(c) > -1) {
+                    x[i].style.display = "block"; // Show matched items
+                }
+            }
+        }
+
+        // Run this as soon as the page is ready
+        document.addEventListener("DOMContentLoaded", function() {
+            // 1. Initialize by showing ALL projects
+            filterSelection("all");
+
+            // 2. Setup button click listeners
+            var btnContainer = document.getElementById("filter-buttons");
+            var btns = btnContainer.getElementsByClassName("filter-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function() {
+                    var current = btnContainer.getElementsByClassName("active");
+                    if (current.length > 0) {
+                        current[0].className = current[0].className.replace(" active", "");
+                    }
+                    this.className += " active";
+                    filterSelection(this.getAttribute("data-filter"));
+                });
+            }
+        });
+    </script>
 </body>
 </html>
