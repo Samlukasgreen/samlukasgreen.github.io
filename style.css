@@ -346,3 +346,41 @@ header {
 .close-btn:hover {
     color: #e74c3c;
 }
+
+/* Align modal text properly and add line spacing */
+#modal-desc {
+    text-align: left;
+    line-height: 1.6;
+    margin-top: 20px;
+    /* This ensures the container stretches to fit floated images */
+    overflow: auto; 
+}
+
+/* Space out the paragraphs in the modal */
+#modal-desc p {
+    margin-bottom: 15px;
+}
+
+/* Base styling for popout images */
+.popout-img {
+    max-width: 40%; /* Keeps images from being too huge */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Image Positions */
+.top-right {
+    float: right;
+    margin: 5px 0 15px 20px;
+}
+
+.mid-left {
+    float: left;
+    margin: 15px 20px 15px 0;
+}
+
+.bot-left {
+    float: left;
+    margin: 15px 20px 15px 0;
+    clear: left; /* Ensures it drops below the mid-left image */
+}
