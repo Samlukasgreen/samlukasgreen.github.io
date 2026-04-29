@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio | Welcome</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* A little CSS to make your photo look great on the page */
+        .profile-photo {
+            max-width: 250px; /* Adjust this number to make it bigger or smaller */
+            border-radius: 50%; /* This makes the image a perfect circle. Change to '10px' for rounded corners instead */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Adds a nice subtle shadow */
+            margin-bottom: 20px; 
+            object-fit: cover;
+            aspect-ratio: 1 / 1; /* Ensures it stays a perfect circle even if the photo isn't a perfect square */
+        }
+
+        /* Centers the header text and image */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -22,12 +39,13 @@
         <div class="top-wave wave-front"></div>
     </div>
     <section>
-    <header>
-        <h1>Hi, I'm Sam Green</h1>
-        <p>I am an AI Engineer studying at CMU.</p>
-    </header>
+        <header>
+            <img src="Sam Photo (1).webp" alt="Sam Green Profile Photo" class="profile-photo">
+            
+            <h1>Hi, I'm Sam Green</h1>
+            <p>I am an AI Engineer studying at CMU.</p>
+        </header>
 
-    
         <h2>About Me</h2>
         <p>I grew up in London, England, and lived there until I was 18. Ever since I was young, I have been extremely interested in how the world works and how we can improve it to be better for everyone.
             In 2021 I moved to Pittsburgh to study engineering and in 2025 I graduated CMU with a double major in Mechanical Engineering and Biomedical Engineering. I am currently studying Artificial Intelligence Engineering at CMU, graduating in December 2026. 
