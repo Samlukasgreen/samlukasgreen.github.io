@@ -307,10 +307,7 @@ header {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #ffffff; 
-    color: #333333; /
-    padding: 30px;
-    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.6);
     align-items: center; 
     justify-content: center;
 }
@@ -320,6 +317,10 @@ header {
     max-width: 900px; 
     max-height: 85vh;
     overflow-y: auto; 
+    background-color: #ffffff;
+    color: #333333; 
+    padding: 30px;
+    border-radius: 12px;
 }
 
 .popout-img {
