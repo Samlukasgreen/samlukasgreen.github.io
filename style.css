@@ -311,76 +311,33 @@ header {
     align-items: center; 
     justify-content: center;
 }
-
 .modal-content {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    width: 80%;
-    max-width: 600px; /* Prevents it from getting too wide on large screens */
-    position: relative;
-    text-align: center;
-    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+    
+    width: 80%; /* Makes the box wider */
+    max-width: 900px; 
+    max-height: 85vh;
+    overflow-y: auto; 
 }
 
-.modal-content img {
-    max-width: 100%;
-    height: auto;
-    max-height: 300px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    object-fit: cover;
-}
-
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 30px;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.close-btn:hover {
-    color: #e74c3c;
-}
-
-/* Align modal text properly and add line spacing */
-#modal-desc {
-    text-align: left;
-    line-height: 1.6;
-    margin-top: 20px;
-    /* This ensures the container stretches to fit floated images */
-    overflow: auto; 
-}
-
-/* Space out the paragraphs in the modal */
-#modal-desc p {
-    margin-bottom: 15px;
-}
-
-/* Base styling for popout images */
 .popout-img {
-    max-width: 40%; /* Keeps images from being too huge */
+    max-width: 25%; 
+    min-width: 150px; 
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Image Positions */
 .top-right {
     float: right;
-    margin: 5px 0 15px 20px;
+    margin: 5px 0 15px 25px; 
 }
 
 .mid-left {
     float: left;
-    margin: 15px 20px 15px 0;
+    margin: 5px 25px 15px 0;
 }
 
 .bot-left {
     float: left;
-    margin: 15px 20px 15px 0;
-    clear: left; /* Ensures it drops below the mid-left image */
+    margin: 5px 25px 15px 0;
+    clear: left; 
 }
