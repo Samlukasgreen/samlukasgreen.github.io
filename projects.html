@@ -253,7 +253,6 @@
 
         // --- 2. Modal Pop-out Logic ---
         const modal = document.getElementById("projectModal");
-        const modalImg = document.getElementById("modal-img");
         const modalTitle = document.getElementById("modal-title");
         const modalDesc = document.getElementById("modal-desc");
         const closeBtn = document.getElementsByClassName("close-btn")[0];
@@ -266,21 +265,11 @@
                 // Grab the detailed text instead of the summary paragraph
                 const detailedTextElement = this.querySelector('.detailed-text');
                 const desc = detailedTextElement ? detailedTextElement.innerHTML : 'More details coming soon!';
-                
-                const imgElement = this.querySelector('img');
-                const imgSrc = imgElement ? imgElement.src : '';
 
                 modalTitle.innerText = title;
                 // Using innerHTML here allows you to use line breaks (<br>) or bullet points (<ul>) in your detailed text later!
                 modalDesc.innerHTML = desc; 
                 
-                if (imgSrc && !imgSrc.includes('placeholder.jpg')) {
-                    modalImg.src = imgSrc;
-                    modalImg.style.display = 'inline-block';
-                } else {
-                    modalImg.style.display = 'none';
-                }
-
                 modal.style.display = "flex"; 
             });
         });
