@@ -9,7 +9,7 @@ body {
     margin: auto;
     padding: 20px;
     background-color: #FFFCDF;
-    overflow-x: hidden; /* <--- ADD THIS LINE to stop left/right screen stretching! */
+    overflow-x: clip; 
 }
 
 /* Navigation Bar */
@@ -72,7 +72,7 @@ header {
     background-color: #2980b9;
 }
 .filterDiv {
-  display: none; /* Hidden by default */
+  display: none; /*  by default */
   background-color: #f1f1f1;
   border: 1px solid #ccc;
   padding: 20px;
@@ -122,7 +122,7 @@ header {
     left: 0;
     width: 100%;          /* Changed from 100vw to fix horizontal expanding */
     height: 100%;         /* Changed from 100vh for stability */
-    overflow: hidden;     /* This is what chops off the giant circles */
+    overflow: clip;     /* This is what chops off the giant circles */
     z-index: -1;          
     pointer-events: none; 
 }
@@ -289,7 +289,7 @@ header {
     height: 150px;
     background-color: #eee; /* Placeholder color in case image is missing */
     border-radius: 8px;
-    overflow: hidden;
+    overflow: clip;
 }
 
 .project-img-container img {
