@@ -369,20 +369,22 @@ header {
 nav {
     position: sticky;
     top: 0;
-    z-index: 1000; /* Keeps it layered above everything else */
-    background-color: #ffffff; /* Solid background so projects don't show through */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a nice subtle drop shadow */
+    z-index: 1000; 
+    /* Changed from #ffffff back to your original dark blue */
+    background-color: #2c3e50; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Darkened the shadow a bit to match the dark theme */
 }
 
 /* Pin the Filter Buttons just below the Nav Bar */
 #filter-buttons {
     position: sticky;
-    top: 50px; /* NOTE: You might need to adjust this number up or down slightly to perfectly match the height of your specific nav bar! */
-    z-index: 999; /* Layered just below the nav */
-    background-color: #ffffff; /* Solid background */
-    padding: 15px 0; 
-    border-bottom: 1px solid #e0e0e0; /* Adds a clean line to separate the filters from the projects */
-}
+    top: 50px; 
+    z-index: 999; 
+    
+    background-color: rgb(40, 40, 40); 
+    
+    padding: 20px 0 15px 0; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
 
 
 /* Styles the links in your contact section */
