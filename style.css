@@ -383,3 +383,18 @@ nav {
     padding: 15px 0; 
     border-bottom: 1px solid #e0e0e0; /* Adds a clean line to separate the filters from the projects */
 }
+
+
+/* Styles the links in your contact section */
+a {
+    color: #ffffff; /* Or whatever color matches your theme */
+    text-decoration: none; /* Removes the default underline */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Makes the hover effect smooth */
+}
+
+/* Changes the color slightly when someone hovers over the link */
+a:hover {
+    color: #cccccc; 
+    text-decoration: underline; /* Adds the underline back on hover so they know it's clickable */
+}
