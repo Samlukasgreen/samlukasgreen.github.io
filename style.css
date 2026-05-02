@@ -346,14 +346,8 @@ header {
     clear: left; 
 }
 
-/* Make the project cards area scrollable independently */
 .container {
-    max-height: 80vh; 
-    
-    /* This adds the vertical scrollbar when there are too many projects */
-    overflow-y: auto; 
-    
-    /* Adds a little breathing room so the scrollbar doesn't overlap your cards */
+
     padding-right: 15px; 
     padding-bottom: 15px;
 }
@@ -369,4 +363,23 @@ header {
 
 .container::-webkit-scrollbar-thumb:hover {
     background-color: #555; 
+}
+
+/* Pin the Nav Bar to the very top */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Keeps it layered above everything else */
+    background-color: #ffffff; /* Solid background so projects don't show through */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a nice subtle drop shadow */
+}
+
+/* Pin the Filter Buttons just below the Nav Bar */
+#filter-buttons {
+    position: sticky;
+    top: 50px; /* NOTE: You might need to adjust this number up or down slightly to perfectly match the height of your specific nav bar! */
+    z-index: 999; /* Layered just below the nav */
+    background-color: #ffffff; /* Solid background */
+    padding: 15px 0; 
+    border-bottom: 1px solid #e0e0e0; /* Adds a clean line to separate the filters from the projects */
 }
