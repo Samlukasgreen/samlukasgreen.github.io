@@ -9,7 +9,7 @@ body {
     margin: auto;
     padding: 20px;
     background-color: #FFFCDF;
-    overflow-x: clip; 
+    overflow-x: hidden; 
 }
 
 /* Navigation Bar */
